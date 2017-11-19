@@ -129,7 +129,7 @@ class Bootstrap_NavWalker extends Walker_Nav_Menu {
 		/**
 		 * Add class '.nav-item' inside <li> tag for Bootstrap
 		 */
-		$classes[] = 'nav-item';
+		$classes[] = 'nav-item mx-5 align-self-center text-center';
 
 		/**
 		 * Add class '.active' inside <li> tag for Bootstrap active menu
@@ -201,7 +201,7 @@ class Bootstrap_NavWalker extends Walker_Nav_Menu {
 		 * Add '.nav-link' class for <a> in parent menu for Bootstrap
 		 */
 		if ( $depth === 0 ) {
-			$atts[ 'class' ] = 'nav-link';
+			$atts[ 'class' ] = 'nav-link px-5';
 		}
 
 		/**
@@ -397,7 +397,7 @@ class Bootstrap_NavWalker extends Walker_Nav_Menu {
 			echo '>';
 
 			// Display the link to Add New Menu
-			echo '<li class="nav-item active"><a class="nav-link" href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">';
+			echo '<li class="nav-item active"><a class="nav-link " href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">';
 			esc_html_e( 'Add a menu', 'theme-textdomain' );
 			echo '</a></li>';
 
