@@ -1,0 +1,14 @@
+{
+"sass.enabled": false,
+    "path": {
+        "base.scss": {
+            "sass.enabled": true,
+            "sass.options": {
+                "outputDir": "css/",
+                "includePaths": [],
+                "sourceComments": false,
+                "outputStyle": "compact"
+            }
+        }
+    }
+}
