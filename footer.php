@@ -6,20 +6,24 @@
                 <h5><i class="fa fa-road"></i> ACME CO INC.</h5>
                 <div class="row">
                     <div class="col-6">
-                        <ul class="list-unstyled">
-                            <li><a href="">Product</a></li>
-                            <li><a href="">Benefits</a></li>
-                            <li><a href="">Partners</a></li>
-                            <li><a href="">Team</a></li>
-                        </ul>
+							  <?php wp_nav_menu( array(
+										'theme_location' => 'footer', // Defined when registering the menu
+										'menu_id'        => 'footer-1',
+										'container'      => false,
+										'depth'          => 2,
+										'menu_class'     => 'list-unstyled',
+									) );
+								  ?>
                     </div>
                     <div class="col-6">
-                        <ul class="list-unstyled">
-                            <li><a href="">Documentation</a></li>
-                            <li><a href="">Support</a></li>
-                            <li><a href="">Legal Terms</a></li>
-                            <li><a href="">About</a></li>
-                        </ul>
+							  <?php wp_nav_menu( array(
+										'theme_location' => 'footer-2', // Defined when registering the menu
+										'menu_id'        => 'footer-2',
+										'container'      => false,
+										'depth'          => 2,
+										'menu_class'     => 'list-unstyled',
+									) );
+								  ?>
                     </div>
                 </div>
                 <ul class="nav">

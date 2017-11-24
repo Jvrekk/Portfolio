@@ -1,7 +1,16 @@
 <html>
 	<head>
-		<title>Moje portfolio</title>
-		<meta charset="UTF-8">
+
+        <meta charset="<?php bloginfo('charset'); ?>">
+        <title>
+            <?php if( is_front_page() ):
+                 bloginfo('name');  
+            else:
+               echo '<', wp_title(''), ' >';
+            endif;
+        ?>
+        </title>
+		<meta name="description" content="<?php bloginfo('description'); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		
 		<?php wp_head() ?>

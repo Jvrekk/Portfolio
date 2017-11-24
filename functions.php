@@ -17,12 +17,32 @@
 	function js_theme_setup(){
 		add_theme_support('menus');
 		register_nav_menu('main', 'Main menu of page');
+		register_nav_menu('footer', 'Menu in the footer');
+		register_nav_menu('footer-2', 'Second menu in the footer');
 	}
 	add_action('init', 'js_theme_setup');
 
 	add_theme_support('custom-header');
 	add_theme_support('post-thumbnails');
 	add_theme_support('post-formats', array('aside','image','video'));
+
+	function jS_remove_version(){
+		return '';
+	}
+	add_filter('the_generator', 'jS_remove_version');
+
+	// Remove WP Version From Styles	
+	add_filter( 'style_loader_src', 'sdt_remove_ver_css_js', 9999 );
+	// Remove WP Version From Scripts
+	add_filter( 'script_loader_src', 'sdt_remove_ver_css_js', 9999 );
+
+	// Function to remove version numbers
+	function sdt_remove_ver_css_js( $src ) {
+		if ( strpos( $src, 'ver=' ) )
+			$src = remove_query_arg( 'ver', $src );
+		return $src;
+	}
 	
 	
 	require get_template_directory() . '/bootstrap-navwalker.php';
+	
