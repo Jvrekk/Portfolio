@@ -1,10 +1,13 @@
-let navWidth = $("#primary-menu").css("width");
+let navWidth = $(".menu").css("width");
+
 $(".button").click(function(){
-	$('#primary-menu').css('transform',"translateX(-"+navWidth+")");
+	$('.menu').css('transform',"translateX(-"+navWidth+")");
 	$('#page').css('transform',"translateX(-"+navWidth+")");
+	$(this).css('opacity',"0");
 });
 $("#page").click(function(){
-	$('#primary-menu').css('transform',"translateX(0px)");
+	$('.menu').css('transform',"translateX(0px)");
 	$(this).css('transform',"translateX(0px)");
+	$('.button').css('opacity',"1");
 	
 });

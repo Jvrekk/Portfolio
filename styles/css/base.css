@@ -1,8 +1,10 @@
-.menu, .button { background: #556270; width: 230px; position: fixed; right: -230px; height: 100vh; }
+.menu, .button { background: #556270; width: 260px; font-size: 150%; position: fixed; right: -260px; height: 100vh; transition-duration: 400ms; }
+
+.menu ul, .button ul { padding-left: 60px; }
 
 .button { right: 0; width: 18px; }
 
-#page { width: calc( 100% - 18px ); }
+#page { min-height: 100%; width: calc( 100% - 18px ); transition-duration: 400ms; }
 
 body { overflow-x: hidden; }
 

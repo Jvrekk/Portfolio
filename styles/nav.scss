@@ -1,12 +1,21 @@
-$nav-width:230px;
+$nav-width:260px;
 $button-nav-width:18px;
+$padding-left:60px;
+$transition:400ms;
+$font-size:150%;
 
 .menu{
 	background: $grey;
 	width: $nav-width;
+	font-size: $font-size;
 	position: fixed;
 	right:-$nav-width;
 	height: 100vh;
+	transition-duration: $transition;
+	ul{
+		//width: $nav-width/2;
+		padding-left: $padding-left;
+	}
 }
 .button{
 	@extend .menu;
@@ -14,5 +23,7 @@ $button-nav-width:18px;
 	width: $button-nav-width;
 }
 #page{
+	min-height: 100%;
 	width:unquote("calc( 100% - #{$button-nav-width} )");
+	transition-duration: $transition;
 }

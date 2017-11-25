@@ -35,12 +35,12 @@ endif; ?>
 			</header>
 <?php endif; ?>
 		
-		<nav id="main-Menu">
+		<nav id="main-Menu" class="menu">
 			<?php wp_nav_menu( array(
 						'theme_location' => 'main',
 						'menu_id'        => 'primary-menu',
 						'container'		 => false,
-						'menu_class'     => 'menu list-unstyled',
+						'menu_class'     => 'list-unstyled',
 			));?>
 		
 		</nav>
