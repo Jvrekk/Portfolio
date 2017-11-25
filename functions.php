@@ -2,7 +2,7 @@
 	function js_portfolio(){
 		//css
 		wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css', array(), '4.0', 'all');
-		wp_enqueue_style('customstyle', get_template_directory_uri() . '/styles/style.css', array(), '1.0', 'all');
+		wp_enqueue_style('customstyle', get_template_directory_uri() . '/styles/css/base.css', array(), '1.0', 'all');
 		
 		//js
 		wp_deregister_script('jquery');

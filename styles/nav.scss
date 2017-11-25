@@ -1,0 +1,18 @@
+$nav-width:230px;
+$button-nav-width:18px;
+
+.menu{
+	background: $grey;
+	width: $nav-width;
+	position: fixed;
+	right:-$nav-width;
+	height: 100vh;
+}
+.button{
+	@extend .menu;
+	right:0;
+	width: $button-nav-width;
+}
+#page{
+	width:unquote("calc( 100% - #{$button-nav-width} )");
+}

@@ -1,2 +1,9 @@
+.menu, .button { background: #556270; width: 230px; position: fixed; right: -230px; height: 100vh; }
+
+.button { right: 0; width: 18px; }
+
+#page { width: calc( 100% - 18px ); }
+
+body { overflow-x: hidden; }
 
 /*# sourceMappingURL=base.css.map */
