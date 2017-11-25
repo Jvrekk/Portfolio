@@ -1,11 +1,17 @@
-.menu, .button { background: #556270; width: 260px; font-size: 150%; position: fixed; right: -260px; height: 100vh; transition-duration: 400ms; }
+.menu, .button { background: #556270; width: 260px; font-size: 150%; position: fixed; top: 0; right: -260px; height: 100vh; transition-duration: 400ms; overflow: hidden; }
 
-.menu ul, .button ul { padding-left: 60px; }
+.menu ul, .button ul { margin-top: 40%; transition-duration: 400ms; padding-left: 60px; transform: translateX(-200px); }
 
-.button { right: 0; width: 18px; }
+.button { right: 0; width: 30px; z-index: 1000; }
 
-#page { min-height: 100%; width: calc( 100% - 18px ); transition-duration: 400ms; }
+.button:hover { background: #74818e; }
+
+#page { min-height: 100%; width: calc( 100% - 30px ); background-color: #fff; transition-duration: 400ms; }
 
 body { overflow-x: hidden; }
+
+a, a:hover, a:active, a:visited { text-decoration: none; }
+
+h1 a { color: #FF6B6B; }
 
 /*# sourceMappingURL=base.css.map */

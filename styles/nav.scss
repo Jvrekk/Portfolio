@@ -1,6 +1,7 @@
 $nav-width:260px;
-$button-nav-width:18px;
+$button-nav-width:30px;
 $padding-left:60px;
+$margin-top:40%;
 $transition:400ms;
 $font-size:150%;
 
@@ -9,21 +10,33 @@ $font-size:150%;
 	width: $nav-width;
 	font-size: $font-size;
 	position: fixed;
+	top:0;
 	right:-$nav-width;
 	height: 100vh;
 	transition-duration: $transition;
+	overflow: hidden;
 	ul{
-		//width: $nav-width/2;
+		margin-top: $margin-top;
+		transition-duration: $transition;
 		padding-left: $padding-left;
+		transform: translateX(-200px);
+	}
+	li a{
+		
 	}
 }
 .button{
 	@extend .menu;
 	right:0;
 	width: $button-nav-width;
+	z-index: 1000;
+}
+.button:hover{
+	background: $gray;
 }
 #page{
 	min-height: 100%;
 	width:unquote("calc( 100% - #{$button-nav-width} )");
+	background-color: $white;
 	transition-duration: $transition;
 }
