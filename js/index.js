@@ -1,17 +1,17 @@
-let navWidth = $(".menu").css("width");
-let buttonWidth = $(".button").css("width");
+(function(){
+    const baseBodyClass = document.querySelector("body").className;
+    const body = document.querySelector("body");
+	function bodyClasser(){
+		body.className = (body.className == baseBodyClass)?baseBodyClass+" menu-active":baseBodyClass;
+	}
 
-$(".button").click(function(){
-	$('.menu').css('transform',"translateX(-"+navWidth+")");
-	$('#page').css('transform',"translateX(-"+navWidth+")");
-	$(this).fadeOut();
-	$(this).css('transform',"translateX("+buttonWidth+")");
-	$('.menu ul').css('transform',"translateX(0)");
-});
-$("#page").click(function(){
-	$('.menu').css('transform',"translateX(0px)");
-	$(this).css('transform',"translateX(0px)");
-	$('.button').fadeIn()
-	$('.button').css('transform',"translateX(0px)");
-	$('.menu ul').css('transform',"translateX(-200px)");	
-});
+
+	document.querySelector(".menu-trigger").addEventListener("click", function(){
+		bodyClasser();
+	});
+	document.querySelector("#page").addEventListener("click", function(){
+		if(body.className != baseBodyClass){
+			bodyClasser();
+		}
+	});
+}).call(this);

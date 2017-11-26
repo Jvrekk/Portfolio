@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="button"></div>
+<div class="menu-trigger"></div>
 <div id="page">
 	<div class="main-posts">
 		<div class="container">

@@ -1,6 +1,7 @@
 $nav-width:260px;
 $button-nav-width:30px;
 $padding-left:60px;
+$transformX:200px;
 $margin-top:40%;
 $transition:400ms;
 $font-size:150%;
@@ -11,27 +12,34 @@ $font-size:150%;
 	font-size: $font-size;
 	position: fixed;
 	top:0;
-	right:-$nav-width;
+	right:-$nav-width+$button-nav-width;
 	height: 100vh;
 	transition-duration: $transition;
 	overflow: hidden;
+	box-shadow: inset 11px 0px 18px -7px rgba(0,0,0,0.64);
 	ul{
 		margin-top: $margin-top;
 		transition-duration: $transition;
+		transform: translateX(-$transformX);
 		padding-left: $padding-left;
-		transform: translateX(-200px);
-	}
-	li a{
-		
+		li a{
+		color:$white;
+		}
 	}
 }
-.button{
-	@extend .menu;
+.menu-trigger{
+	background: $grey;
+	width: $nav-width;
+	transition-duration: $transition;
+	position: fixed;
+	cursor: pointer;
 	right:0;
+	top:0;
+	height: 100vh;
 	width: $button-nav-width;
 	z-index: 1000;
 }
-.button:hover{
+.menu-trigger:hover{
 	background: $gray;
 }
 #page{
@@ -39,4 +47,58 @@ $font-size:150%;
 	width:unquote("calc( 100% - #{$button-nav-width} )");
 	background-color: $white;
 	transition-duration: $transition;
+}
+
+.menu-active{
+	.menu{
+		transform: translateX(-$nav-width+$button-nav-width);
+		ul{
+			transform: translateX(0px);
+		}
+	}
+	.menu-trigger{
+		transform:translateX($button-nav-width);
+	}
+	.button:hover{
+		background: $gray;
+	}
+	#page{
+		cursor:pointer;
+		transform: translateX(-$nav-width);		
+	}
+}
+
+
+
+//media queries
+@media (min-width: 767px){
+	$button-nav-width:15px;
+	.menu-trigger{
+		left:0;
+		width: $button-nav-width;
+	}
+	#page{
+		margin-left:$button-nav-width;
+	}
+	.menu{
+		left:-$nav-width - $button-nav-width;
+		box-shadow: inset -11px 0px 18px -7px rgba(0,0,0,0.64);
+		ul{
+			transform: translateX($transformX);
+		}
+	}
+	.menu-active{
+		.menu-trigger{
+			transform: translateX(-$button-nav-width);
+		}
+		#page{
+			transform: translateX($nav-width);
+		}
+		.menu{
+			transform: translateX($nav-width+$button-nav-width);
+			ul{
+				transform: translateX(0px);
+			}
+		}
+	}
 }

@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-5">
-					<h5><i class="fa fa-road"></i> ACME CO INC.</h5>
+					<h5><i class="fa fa-road"></i>CO INC.</h5>
 					<div class="row">
 						<div class="col-6">
 								  <?php wp_nav_menu( array(
@@ -54,7 +54,7 @@
 			</div>
 		</div>
 	</footer>
-</div>
+</div>  <!-- #page -->
 
 	
 		
