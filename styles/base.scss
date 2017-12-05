@@ -1,11 +1,12 @@
 @import 'variables';
 @import 'nav';
+@import 'welcome';
 
 body{
 	overflow-x: hidden;
 }
 a,a:hover,a:active,a:visited{text-decoration: none;}
-h1 a{color:$h-color;}
+h1,h1 a{color:$h-color;}
 .main-posts{
 	
 }
